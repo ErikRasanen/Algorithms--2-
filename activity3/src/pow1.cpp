@@ -23,3 +23,31 @@ int main(void)
 
     return 0;
 }
+
+
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+long long power(int x, unsigned int n)
+{
+    if (n == 0) return 1;
+    if (n == 1) return x;
+    long long tmp = power(x, n/2);
+    if (n % 2 == 0)
+        return tmp * tmp;
+    else
+        return x * tmp * tmp;
+}
+
+int main()
+{
+    int x = -2;
+    unsigned int n = 10;
+
+    cout << "pow(" << x << ", " << n << ") = " << pow(x, n) << endl;
+
+    return 0;
+}
